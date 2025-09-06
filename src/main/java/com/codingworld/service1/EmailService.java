@@ -8,11 +8,26 @@ import org.springframework.mail.javamail.JavaMailSender;
 import org.springframework.mail.javamail.MimeMessageHelper;
 import org.springframework.stereotype.Service;
 
+import java.io.BufferedWriter;
 import java.io.File;
+import java.io.FileWriter;
+import java.io.IOException;
+import java.io.PrintWriter;
+import java.nio.charset.StandardCharsets;
+import java.nio.file.Files;
+import java.nio.file.Path;
+import java.nio.file.Paths;
+import java.nio.file.StandardOpenOption;
 import java.util.ArrayList;
+import java.util.HashSet;
+import java.util.LinkedHashMap;
 import java.util.List;
+import java.util.Locale;
+import java.util.Map;
+import java.util.Set;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
+import java.util.stream.Stream;
 
 @Service
 public class EmailService {
@@ -48,26 +63,79 @@ public class EmailService {
         mailSender.send(mime);
     }
 
-    public List<RecipientResult> sendIndividually(String from, List<String> recipients, String subject, String body,
-                                                  boolean html, List<String> attachmentPaths) {
-        List<RecipientResult> results = new ArrayList<>();
-        if (recipients == null) return results;
-
-        for (String r : recipients) {
-            if (r == null) continue;
-            String to = r.trim();
-            if (to.isEmpty()) continue;
-
-            try {
-            	System.out.println(guessFirstName(to));
-                sendOne(from,guessFirstName(to), to, subject, body, html, attachmentPaths);
-                results.add(RecipientResult.ok(to));
-            } catch (Exception ex) {
-                results.add(RecipientResult.fail(to, ex.getMessage()));
-            }
-        }
-        return results;
-    }
+			    public List<RecipientResult> sendIndividually(String from, List<String> recipients, String subject, String body,
+			            boolean html, List<String> attachmentPaths) {
+			List<RecipientResult> results = new ArrayList<>();
+			if (recipients == null) return results;
+			
+			// 1) Where we keep the public-facing text file (dev-time location)
+			Path logPath = Paths.get("src/main/resources/static/sent-emails.txt");
+			
+			// Ensure parent dir exists
+			try {
+			Files.createDirectories(logPath.getParent());
+			} catch (IOException e) {
+			e.printStackTrace(); // or use your logger
+			}
+			
+			// 2) Load existing emails (case-insensitive de-dupe)
+			Set<String> existingLower = new HashSet<>();
+			if (Files.exists(logPath)) {
+			    try (Stream<String> lines = Files.lines(logPath, StandardCharsets.UTF_8)) {
+			        for (String s : (Iterable<String>) lines::iterator) {
+			            if (s != null && !s.trim().isEmpty()) {
+			                existingLower.add(s.trim().toLowerCase(Locale.ROOT));
+			            }
+			        }
+			    } catch (IOException e) {
+			        e.printStackTrace();
+			    }
+			}
+			
+			// 3) During this run, collect *new* unique emails to append (preserve original case for file)
+			//    Use LinkedHashMap to keep order and allow case-insensitive de-dupe
+			Map<String, String> toAppend = new LinkedHashMap<>();
+			
+			for (String r : recipients) {
+			if (r == null) continue;
+			String to = r.trim();
+			if (to.isEmpty()) continue;
+			
+			try {
+			String firstName = guessFirstName(to);
+			sendOne(from, firstName, to, subject, body, html, attachmentPaths);
+			results.add(RecipientResult.ok(to));
+			
+			// Only add if not already in file AND not already queued this round
+			String key = to.toLowerCase(Locale.ROOT);
+			if (!existingLower.contains(key) && !toAppend.containsKey(key)) {
+			toAppend.put(key, to); // keep original formatting in the file
+			}
+			} catch (Exception ex) {
+			results.add(RecipientResult.fail(to, ex.getMessage()));
+			// If you also want to record failures, you could maintain a separate file.
+			}
+			}
+			
+			// 4) Append in one go
+			if (!toAppend.isEmpty()) {
+			try (BufferedWriter w = Files.newBufferedWriter(
+			logPath,
+			StandardCharsets.UTF_8,
+			StandardOpenOption.CREATE,
+			StandardOpenOption.APPEND)) {
+			
+			for (String originalCaseEmail : toAppend.values()) {
+			w.write(originalCaseEmail);
+			w.newLine();
+			}
+			} catch (IOException e) {
+			e.printStackTrace();
+			}
+			}
+			
+			return results;
+			}
     public static String guessFirstName(String email) {
         if (email == null) return null;
 
@@ -87,7 +155,7 @@ public class EmailService {
         String first = null;
         for (String part : parts) {
             String cleaned = part.replaceAll("\\d+", ""); // remove digits
-            if (cleaned.length() > 1) { // skip single-letter like "m"
+            if (cleaned.length() > 2) { // skip double-letters like "mn"
                 first = cleaned;
                 break;
             }
