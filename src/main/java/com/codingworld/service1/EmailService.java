@@ -69,7 +69,7 @@ public class EmailService {
 			if (recipients == null) return results;
 			
 			// 1) Where we keep the public-facing text file (dev-time location)
-			Path logPath = Paths.get("src/main/resources/static/sent-emails.txt");
+			Path logPath = Paths.get("src/main/resources/sent-emails.txt");
 			
 			// Ensure parent dir exists
 			try {
@@ -103,7 +103,7 @@ public class EmailService {
 			
 			try {
 			String firstName = guessFirstName(to);
-			sendOne(from, firstName, to, subject, body, html, attachmentPaths);
+			//sendOne(from, firstName, to, subject, body, html, attachmentPaths);
 			results.add(RecipientResult.ok(to));
 			
 			// Only add if not already in file AND not already queued this round
