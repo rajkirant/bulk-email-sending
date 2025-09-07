@@ -120,29 +120,38 @@ public class EmailService {
 			// 3) During this run, collect *new* unique emails to append (preserve original case for file)
 			//    Use LinkedHashMap to keep order and allow case-insensitive de-dupe
 			Map<String, String> toAppend = new LinkedHashMap<>();
-			
-			for (String r : recipients) {
-			if (r == null) continue;
-			String to = r.trim();
-			if (to.isEmpty()) continue;
-			
-			try {
-			String firstName = guessFirstName(to);
-			sendOne(from, firstName, to, subject, body, html, attachmentPaths);
-			results.add(RecipientResult.ok(to));
-			
-			// Only add if not already in file AND not already queued this round
-			String key = to.toLowerCase(Locale.ROOT);
-			if (!existingLower.contains(key) && !toAppend.containsKey(key)) {
-			toAppend.put(key, to); // keep original formatting in the file
-			}
-			} catch (Exception ex) {
-			results.add(RecipientResult.fail(to, ex.getMessage()));
-			// If you also want to record failures, you could maintain a separate file.
-			}
-			}
-			
-			// 4) Append in one go
+
+					for (String r : recipients) {
+						if (r == null) continue;
+						String to = r.trim();
+						if (to.isEmpty()) continue;
+
+						String key = to.toLowerCase(Locale.ROOT);
+
+						// 🔑 Skip if email already sent before (exists in file)
+						if (existingLower.contains(key)) {
+							results.add(RecipientResult.skip(to, "Already sent earlier"));
+							continue;
+						}
+
+						try {
+							String firstName = guessFirstName(to);
+							System.out.println(firstName);
+
+							sendOne(from, firstName, to, subject, body, html, attachmentPaths);
+							results.add(RecipientResult.ok(to));
+
+							// only add if not already queued this round
+							if (!toAppend.containsKey(key)) {
+								toAppend.put(key, to); // keep original formatting
+							}
+						} catch (Exception ex) {
+							results.add(RecipientResult.fail(to, ex.getMessage()));
+						}
+					}
+
+
+					// 4) Append in one go
 			if (!toAppend.isEmpty()) {
 			try (BufferedWriter w = Files.newBufferedWriter(
 			logPath,
@@ -161,6 +170,9 @@ public class EmailService {
 			
 			return results;
 			}
+
+
+
     public static String guessFirstName(String email) {
         if (email == null) return null;
 
