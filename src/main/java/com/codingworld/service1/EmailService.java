@@ -4,9 +4,12 @@ import com.codingworld.dto.RecipientResult;
 import jakarta.mail.MessagingException;
 import jakarta.mail.internet.MimeMessage;
 import org.springframework.core.io.FileSystemResource;
+import org.springframework.core.io.Resource;
+import org.springframework.core.io.ResourceLoader;
 import org.springframework.mail.javamail.JavaMailSender;
 import org.springframework.mail.javamail.MimeMessageHelper;
 import org.springframework.stereotype.Service;
+import org.springframework.util.StringUtils;
 
 import java.io.BufferedWriter;
 import java.io.File;
@@ -32,11 +35,32 @@ import java.util.stream.Stream;
 @Service
 public class EmailService {
     private final JavaMailSender mailSender;
-
-    public EmailService(JavaMailSender mailSender) {
+	private ResourceLoader resourceLoader;
+    public EmailService(JavaMailSender mailSender, ResourceLoader resourceLoader) {
         this.mailSender = mailSender;
+		this.resourceLoader = resourceLoader;
     }
 
+	private Resource resolveAttachment(String nameOrPath) {
+		if (!StringUtils.hasText(nameOrPath)) return null;
+		String trimmed = nameOrPath.trim();
+
+		// If caller already uses classpath:... respect it verbatim
+		if (trimmed.startsWith("classpath:")) {
+			Resource r = resourceLoader.getResource(trimmed);
+			return (r.exists() ? r : null);
+		}
+
+		// 1) Try classpath root (src/main/resources/**)
+		Resource r = resourceLoader.getResource("classpath:/" + trimmed.replaceFirst("^/*", ""));
+		if (r.exists()) return r;
+
+		// 2) Optional: fall back to filesystem
+		File f = new File(trimmed);
+		if (f.exists() && f.isFile()) return new FileSystemResource(f);
+
+		return null; // not found
+	}
     // Send ONE email to ONE recipient
     public void sendOne(String from, String firstName, String to, String subject, String body, boolean html, List<String> attachmentPaths)
             throws MessagingException {
@@ -49,18 +73,19 @@ public class EmailService {
         helper.setSubject(subject);
         helper.setText(body, html);
 
-        if (attachmentPaths != null) {
-            for (String path : attachmentPaths) {
-                if (path == null || path.isBlank()) continue;
-                File f = new File(path);
-                if (f.exists() && f.isFile()) {
-                    helper.addAttachment(f.getName(), new FileSystemResource(f));
-                }
-                // else: skip missing file; or throw if you prefer strict behavior
-            }
-        }
+		if (attachmentPaths != null) {
+			for (String a : attachmentPaths) {
+				Resource res = resolveAttachment(a);
+				if (res != null) {
+					String attachName = (res.getFilename() != null ? res.getFilename() : a);
+					helper.addAttachment(attachName, res); // Resource implements InputStreamSource
+				} else {
+					// log.warn("Attachment not found: {}", a);
+				}
+			}
+		}
 
-        mailSender.send(mime);
+		mailSender.send(mime);
     }
 
 			    public List<RecipientResult> sendIndividually(String from, List<String> recipients, String subject, String body,
@@ -103,7 +128,7 @@ public class EmailService {
 			
 			try {
 			String firstName = guessFirstName(to);
-			//sendOne(from, firstName, to, subject, body, html, attachmentPaths);
+			sendOne(from, firstName, to, subject, body, html, attachmentPaths);
 			results.add(RecipientResult.ok(to));
 			
 			// Only add if not already in file AND not already queued this round
