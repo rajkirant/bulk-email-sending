@@ -1,0 +1,11 @@
+http://localhost:8080/mail/send-bulk
+
+{
+  "to": [
+    "Vincent Wade slecture@tcd.ie"
+  ],
+   "subject": "Research Program Inquiry – Master's by Research on AI",
+  "body": "Dear Dr. [First Name],\n\nI hope you're well. My name is Raj Kiran Thovarayi, and I hold a degree in Advanced Computer Science with 8 years of professional experience. I currently work in a research-focused role at a software development company in London, where I explore and apply emerging technologies.\n\nI'm interested in pursuing a research-oriented master's program, such as a Master's with thesis (MSc by Research) or a Master of Research (MRes), and would be grateful for the opportunity to study under your supervision.I am able to self-fund and am open to conducting research on my areas of interest or any topic related to AI that you may have available.\n\nIf you are accepting new students, please find attached my CV, my Trascripts and a brief research-proposal outline of my interests.\n\nThank you for your time and consideration.\n\nBest regards,\nRaj Kiran Thovarayi\nhttps://www.linkedin.com/in/rajkirant/\n",
+  "html": false,
+  "attachments": ["Masters transcript.pdf","CV.docx","Research Proposal v6.docx"]
+}
