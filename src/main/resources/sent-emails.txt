@@ -113,266 +113,101 @@ olga.sudareva@auckland.ac.nz
 f.sundram@auckland.ac.nz
 neset.tan@auckland.ac.nz
 alan.wang@auckland.ac.nz
-David M Abrahamson David.Abrahamson@tcd.ie
-Sihem Bakri sbakri@tcd.ie
-Wanling Cai WANLING.CAI@tcd.ie
-Grace D'Arcy grdarcy@tcd.ie
-Ferran De La Varga Antoja fdelavar@tcd.ie
-Valerie De Moor demoorv@tcd.ie
-Sangita Dhara dharas@tcd.ie
-Stephen Farrell stephen.farrell@tcd.ie
-Delaram Golpayegani golpayes@tcd.ie
-Alberto Jovane jovanea@tcd.ie
-Eamonn Kenny Eamonn.Kenny@tcd.ie
-Rouven Lattner rlattner@tcd.ie
-Yu Yang Lin Hou linhouy@tcd.ie
-Erwan Moreau moreaue@tcd.ie
-Gary Munnelly munnelg@tcd.ie
-Matthew Nicholson nicholm1@tcd.ie
-Colm O'Fearghail OFEARGCO@tcd.ie
-Eva Power evpower@tcd.ie
-Alex Randles arandles@tcd.ie
-Brendan Spillane BRENDAN.SPILLANE@tcd.ie
-Georgia Spooner GEORGIA.SPOONER@tcd.ie
-John Walsh john.walsh@tcd.ie
-Goksu Yamac gyamac@tcd.ie
-Professor Khurshid Ahmad KHURSHID.AHMAD@tcd.ie
-Inmaculada Arnedillo-Sanchez Macu.Arnedillo@tcd.ie
-Stephen Barrett Stephen.Barrett@tcd.ie
-Alessio Benavoli ALESSIO.BENAVOLI@tcd.ie
-Abeba Birhane birhanea@tcd.ie
-Goetz Botterweck GOETZ.BOTTERWECK@tcd.ie
-Melanie Bouroche bourocm@tcd.ie
-Nina Bresnihan Nina.Bresnihan@tcd.ie
-Professor Caroline Brophy CAROLINE.BROPHY@tcd.ie
-Andrew Butterfield Andrew.Butterfield@tcd.ie
-Professor Vinny Cahill Vinny.Cahill@tcd.ie
-Professor Siobhan Clarke Siobhan.Clarke@tcd.ie
-Professor Owen Conlan owen.conlan@tcd.ie
-Silvia D'Angelo dangelos@tcd.ie
-Kenneth Dawson-Howe Kenneth.Dawson-Howe@tcd.ie
-Eoin Delaney EOIN.DELANEY@tcd.ie
-Giovanni Di Liberto gdiliber@tcd.ie
-John Dingliana john.dingliana@tcd.ie
-Professor Gavin Doherty Gavin.Doherty@tcd.ie
-Alexis Donnelly Alexis.Donnelly@tcd.ie
-Jonathan Dukes jonathan.dukes@tcd.ie
-Professor Ivana Dusparic IVANA.DUSPARIC@tcd.ie
-Merim Dzaferagic MERIM.DZAFERAGIC@tcd.ie
-Martin Emms Martin.Emms@tcd.ie
-Tim Fernando Tim.Fernando@tcd.ie
-Cornelius Fritz fritzc@tcd.ie
-Athanasios Georgiadis georgiaa@tcd.ie
-Yvette Graham ygraham@tcd.ie
-Professor David Gregg David.Gregg@tcd.ie
-Professor Mads Haahr Mads.Haahr@tcd.ie
-Lucy Hederman Lucy.Hederman@tcd.ie
-Bahman Honari bhonari@tcd.ie
-Emma Louise Howard emhoward@tcd.ie
-Binh-Son Hua BINHSON.HUA@tcd.ie
-Meriel Huggard Meriel.Huggard@tcd.ie
-Professor John Kelleher JOHN.KELLEHER@tcd.ie
-Vasileios Koutavas vkoutav@tcd.ie
-Professor Douglas Leith leithdo@tcd.ie
-Professor David Lewis dave.lewis@tcd.ie
-Saif Ur Rehman Malik sumalik@tcd.ie
-Michael Manzke Michael.Manzke@tcd.ie
-Professor Rachel Mc Donnell ramcdonn@tcd.ie
-Ciaran Mc Goldrick Ciaran.McGoldrick@tcd.ie
-Subrahmanyam Murala muralas@tcd.ie
-James Ng ngja@tcd.ie
-Van-Dinh Nguyen DINH.NGUYEN@tcd.ie
-Professor Gregory O'Hare GREGORY.OHARE@tcd.ie
-Professor Declan O'Sullivan Declan.OSullivan@tcd.ie
-Professor Carol O'Sullivan Carol.OSullivan@tcd.ie
-Viet Pham VIET.PHAM@tcd.ie
-Ms. Paula Roberts Paula.Roberts@tcd.ie
-Professor Marco Ruffini MARCO.RUFFINI@tcd.ie
-Timothy Savage Tim.Savage@tcd.ie
-Fergal Shevlin Fergal.Shevlin@tcd.ie
-Ms. Gaye Stephens gaye.stephens@tcd.ie
-Glenn Strong Glenn.Strong@tcd.ie
-Professor Brendan Tangney tangney@tcd.ie
-Hitesh Tewari Hitesh.Tewari@tcd.ie
-Anthony Ventresque ANTHONY.VENTRESQUE@tcd.ie
-Professor Carl Vogel Carl.Vogel@tcd.ie
-Professor Vincent Wade Vincent.Wade@tcd.ie
-John Waldron John.Waldron@tcd.ie
-Stefan Weber Stefan.Weber@tcd.ie
-Arthur White arwhite@tcd.ie
-Professor Simon Wilson Simon.Wilson@tcd.ie
-Jason Wyse wyseja@tcd.ie
-Gareth Young GARETH.YOUNG@tcd.ie
-Mimi Zhang MIMI.ZHANG@tcd.ie
-Éamonn Ó Nualláin Eamonn.ONuallain@tcd.ie
-Shane Greenan shane.greenan@tcd.ie
-Ronan Healy Ronan.Healy@tcd.ie
-John Keogh John.Keogh@tcd.ie
-Paul Masterson Paul.Masterson@tcd.ie
-Cathal O'Connor Cathal.OConnor@tcd.ie
-David M Abrahamson David.Abrahamson@tcd.ie
-Sihem Bakri sbakri@tcd.ie
-Wanling Cai WANLING.CAI@tcd.ie
-Grace D'Arcy grdarcy@tcd.ie
-Ferran De La Varga Antoja fdelavar@tcd.ie
-Valerie De Moor demoorv@tcd.ie
-Sangita Dhara dharas@tcd.ie
-Stephen Farrell stephen.farrell@tcd.ie
-Delaram Golpayegani golpayes@tcd.ie
-Alberto Jovane jovanea@tcd.ie
-Eamonn Kenny Eamonn.Kenny@tcd.ie
-Rouven Lattner rlattner@tcd.ie
-Yu Yang Lin Hou linhouy@tcd.ie
-Erwan Moreau moreaue@tcd.ie
-Gary Munnelly munnelg@tcd.ie
-Matthew Nicholson nicholm1@tcd.ie
-Colm O'Fearghail OFEARGCO@tcd.ie
-Eva Power evpower@tcd.ie
-Alex Randles arandles@tcd.ie
-Brendan Spillane BRENDAN.SPILLANE@tcd.ie
-Georgia Spooner GEORGIA.SPOONER@tcd.ie
-John Walsh john.walsh@tcd.ie
-Goksu Yamac gyamac@tcd.ie
-Professor Khurshid Ahmad KHURSHID.AHMAD@tcd.ie
-Inmaculada Arnedillo-Sanchez Macu.Arnedillo@tcd.ie
-Stephen Barrett Stephen.Barrett@tcd.ie
-Alessio Benavoli ALESSIO.BENAVOLI@tcd.ie
-Abeba Birhane birhanea@tcd.ie
-Goetz Botterweck GOETZ.BOTTERWECK@tcd.ie
-Melanie Bouroche bourocm@tcd.ie
-Nina Bresnihan Nina.Bresnihan@tcd.ie
-Professor Caroline Brophy CAROLINE.BROPHY@tcd.ie
-Andrew Butterfield Andrew.Butterfield@tcd.ie
-Professor Vinny Cahill Vinny.Cahill@tcd.ie
-Professor Siobhan Clarke Siobhan.Clarke@tcd.ie
-Professor Owen Conlan owen.conlan@tcd.ie
-Silvia D'Angelo dangelos@tcd.ie
-Kenneth Dawson-Howe Kenneth.Dawson-Howe@tcd.ie
-Eoin Delaney EOIN.DELANEY@tcd.ie
-Giovanni Di Liberto gdiliber@tcd.ie
-John Dingliana john.dingliana@tcd.ie
-Professor Gavin Doherty Gavin.Doherty@tcd.ie
-Alexis Donnelly Alexis.Donnelly@tcd.ie
-Jonathan Dukes jonathan.dukes@tcd.ie
-Professor Ivana Dusparic IVANA.DUSPARIC@tcd.ie
-Merim Dzaferagic MERIM.DZAFERAGIC@tcd.ie
-Martin Emms Martin.Emms@tcd.ie
-Tim Fernando Tim.Fernando@tcd.ie
-Cornelius Fritz fritzc@tcd.ie
-Athanasios Georgiadis georgiaa@tcd.ie
-Yvette Graham ygraham@tcd.ie
-Professor David Gregg David.Gregg@tcd.ie
-Professor Mads Haahr Mads.Haahr@tcd.ie
-Lucy Hederman Lucy.Hederman@tcd.ie
-Bahman Honari bhonari@tcd.ie
-Emma Louise Howard emhoward@tcd.ie
-Binh-Son Hua BINHSON.HUA@tcd.ie
-Meriel Huggard Meriel.Huggard@tcd.ie
-Professor John Kelleher JOHN.KELLEHER@tcd.ie
-Vasileios Koutavas vkoutav@tcd.ie
-Professor Douglas Leith leithdo@tcd.ie
-Professor David Lewis dave.lewis@tcd.ie
-Saif Ur Rehman Malik sumalik@tcd.ie
-Michael Manzke Michael.Manzke@tcd.ie
-Professor Rachel Mc Donnell ramcdonn@tcd.ie
-Ciaran Mc Goldrick Ciaran.McGoldrick@tcd.ie
-Subrahmanyam Murala muralas@tcd.ie
-James Ng ngja@tcd.ie
-Van-Dinh Nguyen DINH.NGUYEN@tcd.ie
-Professor Gregory O'Hare GREGORY.OHARE@tcd.ie
-Professor Declan O'Sullivan Declan.OSullivan@tcd.ie
-Professor Carol O'Sullivan Carol.OSullivan@tcd.ie
-Viet Pham VIET.PHAM@tcd.ie
-Ms. Paula Roberts Paula.Roberts@tcd.ie
-Professor Marco Ruffini MARCO.RUFFINI@tcd.ie
-Timothy Savage Tim.Savage@tcd.ie
-Fergal Shevlin Fergal.Shevlin@tcd.ie
-Ms. Gaye Stephens gaye.stephens@tcd.ie
-Glenn Strong Glenn.Strong@tcd.ie
-Professor Brendan Tangney tangney@tcd.ie
-Hitesh Tewari Hitesh.Tewari@tcd.ie
-Anthony Ventresque ANTHONY.VENTRESQUE@tcd.ie
-Professor Carl Vogel Carl.Vogel@tcd.ie
-Professor Vincent Wade Vincent.Wade@tcd.ie
-John Waldron John.Waldron@tcd.ie
-Stefan Weber Stefan.Weber@tcd.ie
-Arthur White arwhite@tcd.ie
-Professor Simon Wilson Simon.Wilson@tcd.ie
-Jason Wyse wyseja@tcd.ie
-Gareth Young GARETH.YOUNG@tcd.ie
-Mimi Zhang MIMI.ZHANG@tcd.ie
-Éamonn Ó Nualláin Eamonn.ONuallain@tcd.ie
-Shane Greenan shane.greenan@tcd.ie
-Ronan Healy Ronan.Healy@tcd.ie
-John Keogh John.Keogh@tcd.ie
-Paul Masterson Paul.Masterson@tcd.ie
-Cathal O'Connor Cathal.OConnor@tcd.ie
-David M Abrahamson David.Abrahamson@tcd.ie
-Sihem Bakri sbakri@tcd.ie
-Wanling Cai WANLING.CAI@tcd.ie
-Grace D'Arcy grdarcy@tcd.ie
-Ferran De La Varga Antoja fdelavar@tcd.ie
-Valerie De Moor demoorv@tcd.ie
-Sangita Dhara dharas@tcd.ie
-Stephen Farrell stephen.farrell@tcd.ie
-Delaram Golpayegani golpayes@tcd.ie
-Alberto Jovane jovanea@tcd.ie
-Eamonn Kenny Eamonn.Kenny@tcd.ie
-Rouven Lattner rlattner@tcd.ie
-Yu Yang Lin Hou linhouy@tcd.ie
-Erwan Moreau moreaue@tcd.ie
-Gary Munnelly munnelg@tcd.ie
-Matthew Nicholson nicholm1@tcd.ie
-Colm O'Fearghail OFEARGCO@tcd.ie
-Eva Power evpower@tcd.ie
-Alex Randles arandles@tcd.ie
-Brendan Spillane BRENDAN.SPILLANE@tcd.ie
-Georgia Spooner GEORGIA.SPOONER@tcd.ie
-John Walsh john.walsh@tcd.ie
-Goksu Yamac gyamac@tcd.ie
-Professor Khurshid Ahmad KHURSHID.AHMAD@tcd.ie
-Inmaculada Arnedillo-Sanchez Macu.Arnedillo@tcd.ie
-Stephen Barrett Stephen.Barrett@tcd.ie
-Alessio Benavoli ALESSIO.BENAVOLI@tcd.ie
-Abeba Birhane birhanea@tcd.ie
-Goetz Botterweck GOETZ.BOTTERWECK@tcd.ie
-Melanie Bouroche bourocm@tcd.ie
-Nina Bresnihan Nina.Bresnihan@tcd.ie
-Professor Caroline Brophy CAROLINE.BROPHY@tcd.ie
-Andrew Butterfield Andrew.Butterfield@tcd.ie
-Professor Vinny Cahill Vinny.Cahill@tcd.ie
-Professor Siobhan Clarke Siobhan.Clarke@tcd.ie
-Professor Owen Conlan owen.conlan@tcd.ie
-Silvia D'Angelo dangelos@tcd.ie
-Kenneth Dawson-Howe Kenneth.Dawson-Howe@tcd.ie
-Eoin Delaney EOIN.DELANEY@tcd.ie
-Giovanni Di Liberto gdiliber@tcd.ie
-John Dingliana john.dingliana@tcd.ie
-Professor Gavin Doherty Gavin.Doherty@tcd.ie
-Alexis Donnelly Alexis.Donnelly@tcd.ie
-Jonathan Dukes jonathan.dukes@tcd.ie
-Professor Ivana Dusparic IVANA.DUSPARIC@tcd.ie
-Merim Dzaferagic MERIM.DZAFERAGIC@tcd.ie
-Martin Emms Martin.Emms@tcd.ie
-Tim Fernando Tim.Fernando@tcd.ie
-Cornelius Fritz fritzc@tcd.ie
-Athanasios Georgiadis georgiaa@tcd.ie
-Yvette Graham ygraham@tcd.ie
-Professor David Gregg David.Gregg@tcd.ie
-Professor Mads Haahr Mads.Haahr@tcd.ie
-Lucy Hederman Lucy.Hederman@tcd.ie
-Bahman Honari bhonari@tcd.ie
-Emma Louise Howard emhoward@tcd.ie
-Binh-Son Hua BINHSON.HUA@tcd.ie
-Meriel Huggard Meriel.Huggard@tcd.ie
-Professor John Kelleher JOHN.KELLEHER@tcd.ie
-Vasileios Koutavas vkoutav@tcd.ie
-Professor Douglas Leith leithdo@tcd.ie
-Professor David Lewis dave.lewis@tcd.ie
-Saif Ur Rehman Malik sumalik@tcd.ie
-Michael Manzke Michael.Manzke@tcd.ie
-Professor Rachel Mc Donnell ramcdonn@tcd.ie
-Ciaran Mc Goldrick Ciaran.McGoldrick@tcd.ie
-Subrahmanyam Murala muralas@tcd.ie
-James Ng ngja@tcd.ie
-Van-Dinh Nguyen DINH.NGUYEN@tcd.ie
+David.Abrahamson@tcd.ie
+sbakri@tcd.ie
+WANLING.CAI@tcd.ie
+grdarcy@tcd.ie
+fdelavar@tcd.ie
+demoorv@tcd.ie
+dharas@tcd.ie
+stephen.farrell@tcd.ie
+golpayes@tcd.ie
+jovanea@tcd.ie
+Eamonn.Kenny@tcd.ie
+rlattner@tcd.ie
+linhouy@tcd.ie
+moreaue@tcd.ie
+munnelg@tcd.ie
+nicholm1@tcd.ie
+OFEARGCO@tcd.ie
+evpower@tcd.ie
+arandles@tcd.ie
+BRENDAN.SPILLANE@tcd.ie
+GEORGIA.SPOONER@tcd.ie
+john.walsh@tcd.ie
+gyamac@tcd.ie
+KHURSHID.AHMAD@tcd.ie
+Macu.Arnedillo@tcd.ie
+Stephen.Barrett@tcd.ie
+ALESSIO.BENAVOLI@tcd.ie
+birhanea@tcd.ie
+GOETZ.BOTTERWECK@tcd.ie
+bourocm@tcd.ie
+Nina.Bresnihan@tcd.ie
+CAROLINE.BROPHY@tcd.ie
+Andrew.Butterfield@tcd.ie
+Vinny.Cahill@tcd.ie
+Siobhan.Clarke@tcd.ie
+owen.conlan@tcd.ie
+dangelos@tcd.ie
+Kenneth.Dawson-Howe@tcd.ie
+EOIN.DELANEY@tcd.ie
+gdiliber@tcd.ie
+john.dingliana@tcd.ie
+Gavin.Doherty@tcd.ie
+Alexis.Donnelly@tcd.ie
+jonathan.dukes@tcd.ie
+IVANA.DUSPARIC@tcd.ie
+MERIM.DZAFERAGIC@tcd.ie
+Martin.Emms@tcd.ie
+Tim.Fernando@tcd.ie
+fritzc@tcd.ie
+georgiaa@tcd.ie
+ygraham@tcd.ie
+David.Gregg@tcd.ie
+Mads.Haahr@tcd.ie
+Lucy.Hederman@tcd.ie
+bhonari@tcd.ie
+emhoward@tcd.ie
+BINHSON.HUA@tcd.ie
+Meriel.Huggard@tcd.ie
+JOHN.KELLEHER@tcd.ie
+vkoutav@tcd.ie
+leithdo@tcd.ie
+dave.lewis@tcd.ie
+sumalik@tcd.ie
+Michael.Manzke@tcd.ie
+ramcdonn@tcd.ie
+Ciaran.McGoldrick@tcd.ie
+muralas@tcd.ie
+ngja@tcd.ie
+DINH.NGUYEN@tcd.ie
+GREGORY.OHARE@tcd.ie
+Declan.OSullivan@tcd.ie
+Carol.OSullivan@tcd.ie
+VIET.PHAM@tcd.ie
+Paula.Roberts@tcd.ie
+MARCO.RUFFINI@tcd.ie
+Tim.Savage@tcd.ie
+Fergal.Shevlin@tcd.ie
+gaye.stephens@tcd.ie
+Glenn.Strong@tcd.ie
+tangney@tcd.ie
+Hitesh.Tewari@tcd.ie
+ANTHONY.VENTRESQUE@tcd.ie
+Carl.Vogel@tcd.ie
+Vincent.Wade@tcd.ie
+John.Waldron@tcd.ie
+Stefan.Weber@tcd.ie
+arwhite@tcd.ie
+Simon.Wilson@tcd.ie
+wyseja@tcd.ie
+GARETH.YOUNG@tcd.ie
+MIMI.ZHANG@tcd.ie
+Eamonn.ONuallain@tcd.ie
+shane.greenan@tcd.ie
+Ronan.Healy@tcd.ie
+John.Keogh@tcd.ie
+Paul.Masterson@tcd.ie
+Cathal.OConnor@tcd.ie
+
