@@ -160,7 +160,7 @@ public class EmailService {
 
 							// only add if not already queued this round
 							if (!toAppend.containsKey(key)) {
-								toAppend.put(key, raw); // keep original formatting
+								toAppend.put(key, to); // store only email (without name)
 							}
 						} catch (Exception ex) {
 							results.add(RecipientResult.fail(to, ex.getMessage()));
