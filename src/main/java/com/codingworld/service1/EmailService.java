@@ -21,13 +21,7 @@ import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.nio.file.StandardOpenOption;
-import java.util.ArrayList;
-import java.util.HashSet;
-import java.util.LinkedHashMap;
-import java.util.List;
-import java.util.Locale;
-import java.util.Map;
-import java.util.Set;
+import java.util.*;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 import java.util.stream.Stream;
@@ -123,27 +117,50 @@ public class EmailService {
 
 					for (String r : recipients) {
 						if (r == null) continue;
-						String to = r.trim();
-						if (to.isEmpty()) continue;
+						String raw = r.trim();
+						if (raw.isEmpty()) continue;
+
+						String to;
+						String firstName;
+
+						// Split on whitespace
+						String[] parts = raw.split("\\s+");
+						String lastPart = parts[parts.length - 1];
+
+						if (lastPart.contains("@")) {
+							// ✅ last token looks like an email
+							to = lastPart.trim();
+
+							if (parts.length > 1) {
+								// Everything except last token is the "full name"
+								firstName = String.join(" ", Arrays.copyOf(parts, parts.length - 1)).trim();
+							} else {
+								// No name provided, fallback
+								firstName = guessFirstName(to);
+							}
+						} else {
+							// ✅ input is only an email
+							to = raw;
+							firstName = guessFirstName(to);
+						}
 
 						String key = to.toLowerCase(Locale.ROOT);
 
-						// 🔑 Skip if email already sent before (exists in file)
+						// 🔑 Skip if already sent
 						if (existingLower.contains(key)) {
 							results.add(RecipientResult.skip(to, "Already sent earlier"));
 							continue;
 						}
 
 						try {
-							String firstName = guessFirstName(to);
-							System.out.println(firstName);
+							System.out.println("FullName: " + firstName + ", Email: " + to);
 
 							sendOne(from, firstName, to, subject, body, html, attachmentPaths);
 							results.add(RecipientResult.ok(to));
 
 							// only add if not already queued this round
 							if (!toAppend.containsKey(key)) {
-								toAppend.put(key, to); // keep original formatting
+								toAppend.put(key, raw); // keep original formatting
 							}
 						} catch (Exception ex) {
 							results.add(RecipientResult.fail(to, ex.getMessage()));
@@ -151,8 +168,8 @@ public class EmailService {
 					}
 
 
-					// 4) Append in one go
-			if (!toAppend.isEmpty()) {
+
+					if (!toAppend.isEmpty()) {
 			try (BufferedWriter w = Files.newBufferedWriter(
 			logPath,
 			StandardCharsets.UTF_8,
