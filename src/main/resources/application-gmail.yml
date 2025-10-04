@@ -4,6 +4,7 @@ spring:
     port: 587
     username: rajkiran047@gmail.com
     password: tiqb ntux qncu ugzt
+    display: Raj Kiran
     properties:
       mail.smtp.auth: true
       mail.smtp.starttls.enable: true

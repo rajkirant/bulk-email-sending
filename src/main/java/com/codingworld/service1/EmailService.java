@@ -11,11 +11,7 @@ import org.springframework.mail.javamail.MimeMessageHelper;
 import org.springframework.stereotype.Service;
 import org.springframework.util.StringUtils;
 
-import java.io.BufferedWriter;
-import java.io.File;
-import java.io.FileWriter;
-import java.io.IOException;
-import java.io.PrintWriter;
+import java.io.*;
 import java.nio.charset.StandardCharsets;
 import java.nio.file.Files;
 import java.nio.file.Path;
@@ -56,13 +52,13 @@ public class EmailService {
 		return null; // not found
 	}
     // Send ONE email to ONE recipient
-    public void sendOne(String from, String firstName, String to, String subject, String body, boolean html, List<String> attachmentPaths)
-            throws MessagingException {
+    public void sendOne(String from, String display, String firstName, String to, String subject, String body, boolean html, List<String> attachmentPaths)
+            throws MessagingException, UnsupportedEncodingException {
 
         MimeMessage mime = mailSender.createMimeMessage();
         MimeMessageHelper helper = new MimeMessageHelper(mime, true, "UTF-8");
         body = body.replace("[First Name]", firstName);
-        helper.setFrom(from);
+		helper.setFrom(from, display);
         helper.setTo(to);
         helper.setSubject(subject);
         helper.setText(body, html);
@@ -82,7 +78,7 @@ public class EmailService {
 		mailSender.send(mime);
     }
 
-			    public List<RecipientResult> sendIndividually(String from, List<String> recipients, String subject, String body,
+			    public List<RecipientResult> sendIndividually(String from, String display, List<String> recipients, String subject, String body,
 			            boolean html, List<String> attachmentPaths) {
 			List<RecipientResult> results = new ArrayList<>();
 			if (recipients == null) return results;
@@ -155,7 +151,7 @@ public class EmailService {
 						try {
 							System.out.println("FullName: " + firstName + ", Email: " + to);
 
-							sendOne(from, firstName, to, subject, body, html, attachmentPaths);
+							sendOne(from, display, firstName, to, subject, body, html, attachmentPaths);
 							results.add(RecipientResult.ok(to));
 
 							// only add if not already queued this round
