@@ -1,11 +1,11 @@
-http://localhost:8080/mail/send-bulk
-
 {
   "to": [
-    "Vincent Wade slecture@tcd.ie"
+       "Test User:rajkirant@live.com:company1:user1:pass1","Test User2:rajkiran047@gmail.com:company2:user2:pass2"
   ],
-   "subject": "Research Program Inquiry – Master's by Research on AI",
-  "body": "Dear Dr. [First Name],\n\nI hope you're well. My name is Raj Kiran Thovarayi, and I hold a degree in Advanced Computer Science with 8 years of professional experience. I currently work in a research-focused role at a software development company in London, where I explore and apply emerging technologies.\n\nI'm interested in pursuing a research-oriented master's program, such as a Master's with thesis (MSc by Research) or a Master of Research (MRes), and would be grateful for the opportunity to study under your supervision.I am able to self-fund and am open to conducting research on my areas of interest or any topic related to AI that you may have available.\n\nIf you are accepting new students, please find attached my CV, my Trascripts and a brief research-proposal outline of my interests.\n\nThank you for your time and consideration.\n\nBest regards,\nRaj Kiran Thovarayi\nhttps://www.linkedin.com/in/rajkirant/\n",
-  "html": false,
-  "attachments": ["Masters transcript.pdf","CV.docx","Research Proposal v6.docx"]
+  "placeHolders": [
+    "Company Name", "Username", "Password"
+  ],
+  "subject": "Welcome to Marketdeed.com – Your Account is Ready!",
+  "body": "Hi [Company Name],\n\nWelcome to Marketdeed.com! We're excited to have you onboard.\n\nMarketdeed is a growing platform connecting Manufacturers with verified bulk buyers across the globe. As part of our limited-time free trial, your company has been successfully onboarded.\n\nHere are your login credentials:\n\nUsername: [Username]\nPassword: [Insert Password]\n\nIf you'd prefer not to list your products on the platform, simply reply to this email, and we’ll remove them. Alternatively, you can log in and delete your account at any time.\n\nLog in to your account:\nUsername : [Username]\nPassword : [Password]\n\nNavigate to the “Profile icon” section.\n\nTo list more products, click “Add listing”, upload clear images, set your price, and fill in product details.\n\nEnsure your profile and contact details are complete—buyers are more likely to engage with verified manufacturers.\n\nThe more accurate and appealing your listings, the higher your chances of attracting bulk buyers!\n\nIf you need help or have questions, feel free to reach out.\n\nWarm regards,\nMeghana RK\nHead - Sales and Marketing\nhttps://marketdeed.com/",
+  "html": false
 }
