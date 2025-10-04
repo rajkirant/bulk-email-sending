@@ -23,6 +23,7 @@ import java.util.regex.Pattern;
 import java.util.stream.Stream;
 
 @Service
+@SuppressWarnings("SpringJavaInjectionPointsAutowiringInspection")
 public class EmailService {
     private final JavaMailSender mailSender;
 	private ResourceLoader resourceLoader;
