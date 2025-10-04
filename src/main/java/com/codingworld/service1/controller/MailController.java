@@ -42,7 +42,7 @@ public class MailController {
         String body = (req.body == null) ? "" : req.body;
 
         List<RecipientResult> results = emailService.sendIndividually(
-                from, display, req.to, subject, body, req.html, req.attachments
+                from, display, req.placeHolders, req.to, subject, body, req.html, req.attachments
         );
 
         int sent = (int) results.stream().filter(r -> r.success).count();

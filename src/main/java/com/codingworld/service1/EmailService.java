@@ -23,6 +23,7 @@ import java.util.regex.Pattern;
 import java.util.stream.Stream;
 
 @Service
+@SuppressWarnings("SpringJavaInjectionPointsAutowiringInspection")
 public class EmailService {
     private final JavaMailSender mailSender;
 	private ResourceLoader resourceLoader;
@@ -78,7 +79,7 @@ public class EmailService {
 		mailSender.send(mime);
     }
 
-			    public List<RecipientResult> sendIndividually(String from, String display, List<String> recipients, String subject, String body,
+			    public List<RecipientResult> sendIndividually(String from, String display, List<String> placeHolders, List<String> recipients, String subject, String body,
 			            boolean html, List<String> attachmentPaths) {
 			List<RecipientResult> results = new ArrayList<>();
 			if (recipients == null) return results;
@@ -118,31 +119,34 @@ public class EmailService {
 
 						String to;
 						String firstName;
+						String personalizedBody = body; // clone template for this recipient
 
-						// Split on whitespace
-						String[] parts = raw.split("\\s+");
-						String lastPart = parts[parts.length - 1];
+						String[] parts = raw.split(":");
 
-						if (lastPart.contains("@")) {
-							// ✅ last token looks like an email
-							to = lastPart.trim();
+						if (parts.length >= 2 && parts[1].contains("@")) {
+							// Format: Name:Email:Value1:Value2:...
+							firstName = parts[0].trim();
+							to = parts[1].trim();
 
-							if (parts.length > 1) {
-								// Everything except last token is the "full name"
-								firstName = String.join(" ", Arrays.copyOf(parts, parts.length - 1)).trim();
-							} else {
-								// No name provided, fallback
-								firstName = guessFirstName(to);
+							// Replace placeholders like [role], [location], etc.
+							for (int i = 0; i < placeHolders.size(); i++) {
+								int valueIndex = i + 2; // shift to get value after name and email
+								if (valueIndex < parts.length) {
+									String tag = "[" + placeHolders.get(i) + "]";
+									String value = parts[valueIndex].trim();
+									personalizedBody = personalizedBody.replace(tag, value);
+								}
 							}
 						} else {
-							// ✅ input is only an email
+							// Fallback: just an email
 							to = raw;
 							firstName = guessFirstName(to);
 						}
 
-						String key = to.toLowerCase(Locale.ROOT);
+						// Replace [First Name] in all cases
+						personalizedBody = personalizedBody.replace("[First Name]", firstName);
 
-						// 🔑 Skip if already sent
+						String key = to.toLowerCase(Locale.ROOT);
 						if (existingLower.contains(key)) {
 							results.add(RecipientResult.skip(to, "Already sent earlier"));
 							continue;
@@ -151,17 +155,17 @@ public class EmailService {
 						try {
 							System.out.println("FullName: " + firstName + ", Email: " + to);
 
-							sendOne(from, display, firstName, to, subject, body, html, attachmentPaths);
+							sendOne(from, display, firstName, to, subject, personalizedBody, html, attachmentPaths);
 							results.add(RecipientResult.ok(to));
 
-							// only add if not already queued this round
 							if (!toAppend.containsKey(key)) {
-								toAppend.put(key, to); // store only email (without name)
+								toAppend.put(key, to);
 							}
 						} catch (Exception ex) {
 							results.add(RecipientResult.fail(to, ex.getMessage()));
 						}
 					}
+
 
 
 

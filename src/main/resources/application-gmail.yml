@@ -11,4 +11,3 @@ spring:
       mail.smtp.starttls.required: true
       mail.smtp.ssl.trust: smtp.gmail.com
       mail.smtp.ssl.protocols: TLSv1.2
-      mail.debug: true
