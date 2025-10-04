@@ -119,30 +119,20 @@ public class EmailService {
 						String to;
 						String firstName;
 
-						// Split on whitespace
-						String[] parts = raw.split("\\s+");
-						String lastPart = parts[parts.length - 1];
+						String[] parts = raw.split(":");
 
-						if (lastPart.contains("@")) {
-							// ✅ last token looks like an email
-							to = lastPart.trim();
-
-							if (parts.length > 1) {
-								// Everything except last token is the "full name"
-								firstName = String.join(" ", Arrays.copyOf(parts, parts.length - 1)).trim();
-							} else {
-								// No name provided, fallback
-								firstName = guessFirstName(to);
-							}
+						if (parts.length == 2) {
+							// ✅ Format: Name:Email
+							firstName = parts[0].trim();
+							to = parts[1].trim();
 						} else {
-							// ✅ input is only an email
+							// ✅ Otherwise treat as plain email
 							to = raw;
 							firstName = guessFirstName(to);
 						}
 
 						String key = to.toLowerCase(Locale.ROOT);
 
-						// 🔑 Skip if already sent
 						if (existingLower.contains(key)) {
 							results.add(RecipientResult.skip(to, "Already sent earlier"));
 							continue;
@@ -161,6 +151,7 @@ public class EmailService {
 						} catch (Exception ex) {
 							results.add(RecipientResult.fail(to, ex.getMessage()));
 						}
+
 					}
 
 
